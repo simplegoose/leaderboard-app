@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <header class="header">
+    <h1>Leaderboard</h1>
+  </header>
+
+  <main class="d-flex wrap">
+    <div class="table">
+      <div class="header-wrapper d-flex wrap">
+        <h4 class="table-header">Recent Scores</h4>
+        <button class="refresh btn" id="refresh" type="button">Refresh</button>
+      </div>
+
+      <ul class="table-list">
+        <li>Timothy: 50</li>
+        <li>Simplegoose: 75</li>
+      </ul>
+    </div>
+
+    <div class="form">
+      <h4 class="form-header">Add your score</h4>
+      <form method="post" class="d-flex wrap">
+        <input type="text" name="name" id="name" class="basis-100" placeholder="Your name">
+        <input type="text" name="score" id="score" class="basis-100" placeholder="Your score">
+        <button type="submit" class="submit btn">Submit</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
