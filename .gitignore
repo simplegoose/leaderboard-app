@@ -1,1 +1,4 @@
 node_modules
+
+#ignore jest coverage files
+/coverage
