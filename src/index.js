@@ -1,7 +1,4 @@
 import './css/style.css';
+import { addEventListeners } from './js/eventListeners.js';
 
-const btn = document.querySelector('.btn.refresh');
-
-btn.addEventListener('click', (e) => {
-  e.target.blur();
-});
+addEventListeners();
