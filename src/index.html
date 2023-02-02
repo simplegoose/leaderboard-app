@@ -17,15 +17,29 @@
         <button class="refresh btn" id="refresh" type="button">Refresh</button>
       </div>
 
-      <ul class="table-list" id="table-list">
-      </ul>
+      <table class="table-list" id="table-list">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
     <div class="form">
       <h4 class="form-header">Add your score</h4>
       <form method="post" class="d-flex wrap">
-        <input type="text" name="name" id="name" class="basis-100" placeholder="Your name">
-        <input type="text" name="score" id="score" class="basis-100" placeholder="Your score">
+        <div class="form-input">
+          <input type="text" name="name" id="name" class="basis-100" placeholder="Your name">
+          <small>Please enter your name</small>
+        </div>
+        <div class="form-input">
+          <input type="text" name="score" id="score" class="basis-100" placeholder="Your score">
+          <small>Please enter your score</small>
+        </div>
         <button type="submit" class="submit btn">Submit</button>
       </form>
     </div>
