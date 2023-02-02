@@ -9,13 +9,25 @@ export const formSubmit = async (e) => {
   const user = e.target.name.value;
   const score = e.target.score.value;
 
-  const { status } = await createScore({ user, score });
+  if (!user) {
+    submitBtn.removeAttribute('disabled');
+    return e.target.name.classList.add('input-invalid');
+  }
+
+  if (!score) {
+    submitBtn.removeAttribute('disabled');
+    return e.target.score.classList.add('input-invalid');
+  }
+
+  const { status, data } = await createScore({ user, score });
 
   if (status === 200 || status === 201) {
     addListItem({ user, score });
     submitBtn.removeAttribute('disabled');
     e.target.reset();
   }
+
+  return data;
 };
 
 export const refreshBtnListener = async (e) => {
@@ -31,9 +43,20 @@ export const refreshBtnListener = async (e) => {
   }
 };
 
+const inputListener = (e) => {
+  if (e.target.value && e.target.classList.contains('input-invalid')) {
+    e.target.classList.remove('input-invalid');
+  }
+};
+
 export const addEventListeners = () => {
   const form = document.querySelector('form');
   const btnRefresh = document.querySelector('.btn.refresh');
+  const inputName = document.querySelector('#name');
+  const inputScore = document.querySelector('#score');
+
+  inputName.addEventListener('change', inputListener);
+  inputScore.addEventListener('change', inputListener);
 
   btnRefresh.addEventListener('click', refreshBtnListener);
 
