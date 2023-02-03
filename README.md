@@ -74,7 +74,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://simplegoose.github.io/leaderboard-app/)
+- [Live Demo Link](https://simplegoose.github.io/leaderboard-app/dist/.)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
